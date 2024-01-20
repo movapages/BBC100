@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import TitleList from './components/TitleList';
+import CurrentDialogue from './components/CurrentDialogue';
+import {jsonTitleList, readJsonTitles} from "./store";
 
+readJsonTitles();
 function App() {
+
+  jsonTitleList
+    .subscribe(titles => console.log('titles: ', titles));
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="font-alice flex-col justify-start w-full min-h-screen">
+      <h3 className="bg-gradient-to-r from-blue-100 text-blue-800 text-3xl mb-8 mt-4 w-full p-1 rounded-sm">
+        БіБіСі Діалоги &brvbar; <small className="text-xl text-blue-300">BBC Dialogues</small>
+      </h3>
+      <div className="flex flex-row gap-1 w-full">
+        <TitleList />
+        <CurrentDialogue />
+      </div>
+
     </div>
   );
 }
