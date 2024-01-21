@@ -28,6 +28,10 @@ export function readJsonTitles () {
   jsonTitleList.next(titleList);
 }
 
+/**
+ * read in a selected JSON file
+ * @param jsonFile
+ */
 export function getCurrentJson (jsonFile = jsonList[0]) {
   const curJsonFile = require('../json/d_' + jsonFile + '.json');
   currentJsonSubject.next(curJsonFile);

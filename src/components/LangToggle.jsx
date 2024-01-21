@@ -8,7 +8,9 @@ const LangToggle = () => {
       .subscribe( language => {
         setCurLang(language);
       });
-    return langSub.unsubscribe();
+    return () => {
+      langSub.unsubscribe();
+    };
   }, []);
 
   const toggleLanguage = (e) => {
