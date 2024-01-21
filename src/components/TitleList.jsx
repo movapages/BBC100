@@ -25,7 +25,7 @@ const TitleList = () => {
   }, []);
 
   return (
-    <div className="text-blue-500 text-xl min-w-fit">
+    <div className="text-blue-500 text-xl min-w-64 flex-1">
       <LangToggle />
       <FullTitleListComponent titles={fullTitleList} currentLanguage={currentLanguage} />
     </div>
