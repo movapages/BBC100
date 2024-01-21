@@ -27,3 +27,8 @@ export function readJsonTitles () {
   jsonList.forEach(el => titleList.push({[el]: require('../json/d_' + el + '.json').title}));
   jsonTitleList.next(titleList);
 }
+
+export function getCurrentJson (jsonFile = jsonList[0]) {
+  const curJsonFile = require('../json/d_' + jsonFile + '.json');
+  currentJsonSubject.next(curJsonFile);
+}
